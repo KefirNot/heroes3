@@ -1,0 +1,39 @@
+.surface {
+	&-vertical, &-horizontal {
+		float: left;
+	}
+	
+	&-tile {
+		width: 32px;
+		height: 32px;
+		float: left;
+	}
+	&-content {
+		overflow: hidden;
+		float: left;
+	}
+}
+
+.border {
+	&-top, &-botoom {
+		width: 100%;
+		height: 32px;
+		float: left;
+	}
+
+	&-left,&-right {
+		width: 32px;
+		height: calc(100% - 64px);
+		float: left;
+	}
+
+	&-tile {
+		width: 32px;
+		height: 32px;
+		float: left;
+	}
+	&-content {
+		overflow: hidden;
+		float: left;
+	}
+}
