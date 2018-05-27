@@ -1,4 +1,4 @@
-import tileUrlManager from './urlManager';
+import urlManager from './urlManager';
 import * as tile from './tileType';
 
 export const isValid = (data) => {
@@ -33,7 +33,7 @@ export const fillUrlData = (data) => {
 	for (let x = 0; x < size.width; x++) {
 		for (let y = 0; y < size.height; y++) {
 			const nearbyCells = generateNearbyCells(data, x, y);
-			data[y][x].url = tileUrlManager(nearbyCells);
+			data[y][x].url = urlManager(nearbyCells);
 		}
 	}
 	return data;

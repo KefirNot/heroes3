@@ -12,10 +12,10 @@ class App extends React.Component {
 	}
 
 	render() {
-		const { map: { landscape: { data, size } }, ui } = this.props;
+		const { map: { landscape: { data, size }, surface: { outland, border } }, ui } = this.props;
 		return (
 			<div>
-				<Surface size={size}>
+				<Surface size={size} outland={outland} border={border}>
 					<div className="map" style={{ width: size.width * 32, height: size.height * 32 }}>
 						<Landscape data={data} size={size} className="map-content" />
 						{ui.showGrid ? <Grid data={data} size={size} className="map-content" /> : null}

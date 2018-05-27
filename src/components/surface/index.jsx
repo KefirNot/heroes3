@@ -3,40 +3,59 @@ import urlProvider from './tileUrlProvider';
 import Border from './border';
 import './style.scss';
 
-const genStyle = (url) => ({ backgroundImage: `url('${url}')` });
-const outlandWidth = 2;
-const outlandHeight = 2;
+export default class extends React.PureComponent {
+	getSize = (data) => ({
+		width: data[0].length,
+		height: data.length,
+	});
 
-export default class extends React.Component {
-	get hOutland() {
-		const { size } = this.props;
-		const width = size.width + 2 + outlandWidth * 2;
-		const height = outlandHeight;
+	genStyle = (url) => ({ backgroundImage: `url('${url}')` });
 
+	get topOutland() {
+		const { outland: { top } } = this.props;
+		const size = this.getSize(top);
 		return (
-			<div className="surface-horizontal" style={{ width: width * 32, height: height * 32 }}>
-				{[...Array(width * outlandHeight)].map(() => <div className="surface-tile" style={genStyle(urlProvider('o'))}></div>)}
+			<div className="surface-horizontal" style={{ width: size.width * 32, height: size.height * 32 }}>
+				{[].concat.apply([], top).map(url => <div className="surface-tile" style={this.genStyle(url)}></div>)}
 			</div>
 		);
 	}
 
-	get vOutland() {
-		const { size } = this.props;
-		const width = outlandWidth;
-		const height = size.height + 2;
-
+	get bottomOutland() {
+		const { outland: { bottom } } = this.props;
+		const size = this.getSize(bottom);
 		return (
-			<div className="surface-vertical" style={{ width: width * 32, height: height * 32 }}>
-				{[...Array(height * outlandWidth)].map(() => <div className="surface-tile" style={genStyle(urlProvider('o'))}></div>)}
+			<div className="surface-horizontal" style={{ width: size.width * 32, height: size.height * 32 }}>
+				{[].concat.apply([], bottom).map(url => <div className="surface-tile" style={this.genStyle(url)}></div>)}
+			</div>
+		);
+	}
+
+	get leftOutland() {
+		const { outland: { left } } = this.props;
+		const size = this.getSize(left);
+		return (
+			<div className="surface-vertical" style={{ width: size.width * 32, height: size.height * 32 }}>
+				{[].concat.apply([], left).map(url => <div className="surface-tile" style={this.genStyle(url)}></div>)}
+			</div>
+		);
+	}
+
+	get rightOutland() {
+		const { outland: { right } } = this.props;
+		const size = this.getSize(right);
+		return (
+			<div className="surface-vertical" style={{ width: size.width * 32, height: size.height * 32 }}>
+				{[].concat.apply([], right).map(url => <div className="surface-tile" style={this.genStyle(url)}></div>)}
 			</div>
 		);
 	}
 
 	render() {
-		const { size } = this.props;
+		const { size, outland } = this.props;
 		const mainStyle = {
-			width: (size.width + 2 + outlandWidth * 2) * 32,
-			height: (size.height + 2 + outlandHeight * 2) * 32,
+			width: (size.width + 2 + outland.width * 2) * 32,
+			height: (size.height + 2 + outland.height * 2) * 32,
 		};
 		const contentStyle = {
 			width: (size.width + 2) * 32,
@@ -44,13 +63,13 @@ export default class extends React.Component {
 		};
 		return (
 			<div className="surface" style={mainStyle}>
-				{this.hOutland}
-				{this.vOutland}
+				{this.topOutland}
+				{this.leftOutland}
 				<div className="surface-content" style={contentStyle}>
 					<Border {...this.props} />
 				</div>
-				{this.vOutland}
-				{this.hOutland}
+				{this.rightOutland}
+				{this.bottomOutland}
 			</div>
 		);
 	}

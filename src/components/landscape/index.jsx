@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import './style.scss';
 
-export default class extends React.Component {
+export default class extends React.PureComponent {
 	render() {
 		const { className, data, size } = this.props;
 		return (

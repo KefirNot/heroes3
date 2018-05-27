@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { tileType } from '../../store/landscape/tileType';
 import './style.scss';
 
-export default class extends React.Component {
+export default class extends React.PureComponent {
 	getColor = tile => {
 		switch (tile) {
 			case tileType.abyss:

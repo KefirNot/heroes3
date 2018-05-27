@@ -4,47 +4,43 @@ import './style.scss';
 
 const genStyle = (url) => ({ backgroundImage: `url('${url}')` });
 
-export default class extends React.Component {
+export default class extends React.PureComponent {
 	get topBorder() {
-		const { width } = this.props.size;
+		const { top } = this.props.border;
 
 		return (
 			<div className="border-top">
-				<div className="border-tile" style={genStyle(urlProvider('nw'))}></div>
-				{[...Array(width)].map(() => <div className="border-tile" style={genStyle(urlProvider('n'))}></div>)}
-				<div className="border-tile" style={genStyle(urlProvider('ne'))}></div>
+				{top.map(url => <div className="border-tile" style={genStyle(url)}></div>)}
 			</div>
 		);
 	}
 
 	get bottomBorder() {
-		const { width } = this.props.size;
+		const { bottom } = this.props.border;
 
 		return (
 			<div className="border-bottom">
-				<div className="border-tile" style={genStyle(urlProvider('sw'))}></div>
-				{[...Array(width)].map(() => <div className="border-tile" style={genStyle(urlProvider('s'))}></div>)}
-				<div className="border-tile" style={genStyle(urlProvider('se'))}></div>
+				{bottom.map(url => <div className="border-tile" style={genStyle(url)}></div>)}
 			</div>
 		);
 	}
 
 	get leftBorder() {
-		const { height } = this.props.size;
+		const { left } = this.props.border;
 
 		return (
 			<div className="border-left">
-				{[...Array(height)].map(() => <div className="border-tile" style={genStyle(urlProvider('w'))}></div>)}
+				{left.map(url => <div className="border-tile" style={genStyle(url)}></div>)}
 			</div>
 		);
 	}
 
 	get rightBorder() {
-		const { height } = this.props.size;
+		const { right } = this.props.border;
 
 		return (
 			<div className="border-right">
-				{[...Array(height)].map(() => <div className="border-tile" style={genStyle(urlProvider('e'))}></div>)}
+				{right.map(url => <div className="border-tile" style={genStyle(url)}></div>)}
 			</div>
 		);
 	}
