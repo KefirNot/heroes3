@@ -1,5 +1,4 @@
 import React from 'react';
-import urlProvider from './tileUrlProvider';
 import Border from './border';
 import './style.scss';
 

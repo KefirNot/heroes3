@@ -1,5 +1,4 @@
 import React from 'react';
-import urlProvider from './tileUrlProvider';
 import './style.scss';
 
 const genStyle = (url) => ({ backgroundImage: `url('${url}')` });
