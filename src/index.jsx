@@ -4,8 +4,8 @@ import { AppContainer } from 'react-hot-loader';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import App from './component';
-import reducer from './store/reducer';
+import App from './app';
+import reducer from './store';
 
 const store = createStore(reducer);
 
