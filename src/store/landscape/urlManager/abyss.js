@@ -1,4 +1,5 @@
-import { aroundCellsToString, randomInteger } from './helper';
+import { aroundCellsToString } from './helper';
+import { randomInteger } from '../../../helpers/random';
 import { tileType } from '../tileType';
 
 export default cells => {
@@ -53,7 +54,7 @@ export default cells => {
 		case '11011111':
 			return `bsw${randomInteger(1, 2)}`;
 		default:
-			console.log('abyss tile unknown', sMap);
+			console.log('abyss tile unknown: ', sMap);
 			return 'z';
 	}
 };

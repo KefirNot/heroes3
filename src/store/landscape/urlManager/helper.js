@@ -10,9 +10,3 @@ export const nearbyCellsIsValid = (cells) => {
 	if (cells.includes(row => row.length !== 3)) return false;
 	return true;
 };
-
-export const randomInteger = (min, max) => {
-	var rand = min - 0.5 + Math.random() * (max - min + 1)
-	rand = Math.round(rand);
-	return rand;
-}

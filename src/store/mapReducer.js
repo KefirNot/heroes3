@@ -1,10 +1,8 @@
-import { createAction, handleAction, combineActions  } from 'redux-actions';
-import { landscapeSource } from './mapDataSource';
-import { convertLandscape } from './mapDataConverter';
-import { fillUrlData, getSize, isValid } from './landscape/helper';
+import { createAction, handleAction, combineActions } from 'redux-actions';
+import { landscapeSource, convertLandscape, fillUrlData, getSize, isValid } from './landscape';
 
 const defaultLandscape = fillUrlData(convertLandscape(landscapeSource))
-if(!isValid(defaultLandscape)) throw new Error('lalka');
+if (!isValid(defaultLandscape)) throw new Error('lalka');
 const defaultState = {
 	landscape: {
 		data: defaultLandscape,

@@ -1,4 +1,4 @@
-import * as tileFactory from './landscape/tileType';
+import * as tileFactory from './tileType';
 
 export const convertLandscape = (data) => data.map(row => row.split(' ').map(char => {
 	switch (char) {

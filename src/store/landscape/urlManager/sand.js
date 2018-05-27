@@ -1,4 +1,4 @@
-import { randomInteger } from './helper';
+import { randomInteger } from '../../../helpers/random';
 
 const simpleTileChance = 80;
 
