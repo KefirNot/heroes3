@@ -1,7 +1,7 @@
-import { createAction, handleAction, combineActions  } from 'redux-actions';
+import { createAction, handleAction, combineActions } from 'redux-actions';
 
 const defaultState = {
-	showGrid: false,
+    showGrid: false,
 };
 
 export const action = createAction('TOGGLE_GRID');

@@ -18,7 +18,7 @@ class App extends React.Component {
 				<Surface size={size} outland={outland} border={border}>
 					<div className="map" style={{ width: size.width * 32, height: size.height * 32 }}>
 						<Landscape data={data} size={size} className="map-content" />
-						{ui.showGrid ? <Grid data={data} size={size} className="map-content" /> : null}
+						<Grid data={data} size={size} className="map-content" visible={ui.showGrid} />
 					</div>
 				</Surface>
 			</div>

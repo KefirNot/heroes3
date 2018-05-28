@@ -13,14 +13,14 @@ export default class extends React.PureComponent {
 	}
 
 	render() {
-		const { className, data, size: { width, height } } = this.props;
+		const { className, data, visible, size: { width, height } } = this.props;
 		const style = {
 			width: width * 32,
 			height: height * 32,
 		};
 
 		return (
-			<div className={classnames('grid', className)} style={style}>
+			<div className={classnames('grid', className, { 'grid-visible': visible })} style={style}>
 				{
 					[...Array(width * height)].map((u, i) => {
 						const x = i % width;

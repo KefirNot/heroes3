@@ -1,4 +1,8 @@
 .grid {
+    display: none;
+    &-visible {
+        display: block;
+    }
 	&-cell {
 		width: 32px;
 		height: 32px;
