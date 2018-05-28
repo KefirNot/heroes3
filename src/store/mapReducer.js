@@ -1,10 +1,11 @@
 import { createAction, handleAction, combineActions } from 'redux-actions';
-import { landscapeSource, convertLandscape, fillUrlData, getSize, isValid } from './landscape';
+import { landscapeSource, convertLandscape, fillUrlData } from './landscape';
+import * as array2d from 'helper/array2d';
 import * as surface from './surface';
 
 const defaultLandscape = fillUrlData(convertLandscape(landscapeSource))
-const defaultLandscapeSize = getSize(defaultLandscape);
-if (!isValid(defaultLandscape)) throw new Error('lalka');
+const defaultLandscapeSize = array2d.getSize(defaultLandscape);
+if (!array2d.isValid(defaultLandscape)) throw new Error('lalka');
 const defaultState = {
 	landscape: {
 		data: defaultLandscape,

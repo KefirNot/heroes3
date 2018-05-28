@@ -1,43 +1,35 @@
 import React from 'react';
 import './style.scss';
 
-const HorizontalBorder = (props) => {
-    const { data } = props;
+const HorizontalBorder = (props) => (
+    <div className="border-horizontal">
+        {
+            props.data.map((url, i) => {
+                const tileProps = {
+                    key      : i,
+                    className: 'border-tile',
+                    style    : { backgroundImage: `url('${url}')` },
+                }
+                return <div {...tileProps}></div>;
+            })
+        }
+    </div>
+);
 
-    return (
-        <div className="border-horizontal">
-            {
-                data.map((url, i) => {
-                    const props = {
-                        key      : i,
-                        className: 'border-tile',
-                        style    : { backgroundImage: `url('${url}')` },
-                    }
-                    return <div {...props}></div>;
-                })
-            }
-        </div>
-    );
-}
-
-const VerticalBorder = (props) => {
-    const { data } = props;
-
-    return (
-        <div className="border-vertical">
-            {
-                data.map((url, i) => {
-                    const props = {
-                        key      : i,
-                        className: 'border-tile',
-                        style    : { backgroundImage: `url('${url}')` },
-                    }
-                    return <div {...props}></div>;
-                })
-            }
-        </div>
-    );
-}
+const VerticalBorder = (props) => (
+    <div className="border-vertical">
+        {
+            props.data.map((url, i) => {
+                const tileProps = {
+                    key      : i,
+                    className: 'border-tile',
+                    style    : { backgroundImage: `url('${url}')` },
+                }
+                return <div {...tileProps}></div>;
+            })
+        }
+    </div>
+);
 
 export default class extends React.PureComponent {
     render() {
