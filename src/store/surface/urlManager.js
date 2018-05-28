@@ -1,4 +1,4 @@
-import { randomInteger } from '../../helpers/random';
+import { randomInteger } from 'helper/random';
 
 const getFileName = (direction) => {
 	switch (direction.length) {

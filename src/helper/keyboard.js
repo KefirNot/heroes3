@@ -1,4 +1,4 @@
-import { action } from '../store/uiReducer';
+import { action } from 'store/uiReducer';
 
 const makeKeyPressHandler = dispatch => event => {
 	switch (event.keyCode) {

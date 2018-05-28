@@ -1,5 +1,5 @@
 import { aroundCellsToString } from './helper';
-import { randomInteger } from '../../../helpers/random';
+import { randomInteger } from 'helper/random';
 import { tileType } from '../tileType';
 
 export default cells => {

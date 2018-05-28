@@ -1,9 +1,9 @@
 import React from 'react';
-import Landscape from './components/landscape';
-import Surface from './components/surface';
-import Grid from './components/grid';
+import Landscape from 'component/landscape';
+import Surface from 'component/surface';
+import Grid from 'component/grid';
 import { connect } from 'react-redux'
-import * as keyboard from './helpers/keyboard';
+import * as keyboard from 'helper/keyboard';
 import './style.scss';
 
 class App extends React.Component {

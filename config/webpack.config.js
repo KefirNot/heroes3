@@ -31,8 +31,14 @@ module.exports = {
 		],
 	},
 	resolve: {
+		alias: {
+			helper: path.resolve('src/helper'),
+			component: path.resolve('src/component'),
+			store: path.resolve('src/store'),
+		},
 		extensions: ['.js', '.jsx'],
 	},
+	
 	plugins: [
 		new HtmlWebpackPlugin({ template: './src/index.html', filename: 'index.html', inject: 'body' }),
 		new CopyWebpackPlugin([{ from: 'src/images', to: 'images' }]),

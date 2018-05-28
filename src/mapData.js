@@ -1,4 +1,4 @@
-import * as tileFactory from './components/landscape/tileFactory';
+import * as tileFactory from './component/landscape/tileFactory';
 
 const s = () => tileFactory.sand();
 const a = () => tileFactory.abyss();
