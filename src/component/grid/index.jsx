@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { tileType } from '../../store/landscape/tileType';
+import { tileType } from 'store/landscape/tileType';
 import './style.scss';
 
 export default class extends React.PureComponent {
