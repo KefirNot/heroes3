@@ -1,14 +1,6 @@
 import urlManager from './urlManager';
 import * as tile from './tileType';
-import * as array2d from 'helper/array2d';
-
-export const isValid = (data) => {
-	if (!Array.isArray(data)) return false;
-	if (data.length === 0) return true;
-	if (data.includes(row => !Array.isArray(row))) return false;
-	if (data.includes(row => row.length !== data[0].length)) return false;
-	return true;
-}
+import array2d from 'helper/array2d';
 
 const generateNearbyCells = (data, x, y) => [
 	[getCell(data, x - 1, y - 1), getCell(data, x - 1, y), getCell(data, x - 1, y + 1)],

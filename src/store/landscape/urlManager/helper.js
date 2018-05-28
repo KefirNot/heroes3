@@ -1,4 +1,4 @@
-import * as array2d from 'helper/array2d';
+import array2d from 'helper/array2d';
 
 export const aroundCellsToString = (cells, cellConverter) => {
 	const mergedCells = array2d.flatten(cells).filter((x, i) => i !== 4);

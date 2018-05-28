@@ -1,6 +1,6 @@
 import React from 'react';
 import Border from './border';
-import * as array2d from 'helper/array2d';
+import array2d from 'helper/array2d';
 import './style.scss';
 
 const Outland = (props) => {

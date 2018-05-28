@@ -10,3 +10,7 @@ const makeKeyPressHandler = dispatch => event => {
 export const startListen = (dispatch) => {
 	document.addEventListener("keypress", makeKeyPressHandler(dispatch));
 }
+
+export default {
+    startListen,
+}

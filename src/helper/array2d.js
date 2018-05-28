@@ -12,3 +12,9 @@ export const isValid = (data) => {
     if (data.includes(row => row.length !== data[0].length)) return false;
     return true;
 }
+
+export default {
+    flatten,
+    getSize,
+    isValid,
+}

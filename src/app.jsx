@@ -3,7 +3,7 @@ import Landscape from 'component/landscape';
 import Surface from 'component/surface';
 import Grid from 'component/grid';
 import { connect } from 'react-redux'
-import * as keyboard from 'helper/keyboard';
+import keyboard from 'helper/keyboard';
 import './style.scss';
 
 class App extends React.Component {

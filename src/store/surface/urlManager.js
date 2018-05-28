@@ -1,11 +1,11 @@
-import { randomInteger } from 'helper/random';
+import random from 'helper/random';
 
 const getFileName = (direction) => {
 	switch (direction.length) {
 		case 1:
 			if ('nsewo'.indexOf(direction) < 0) throw new Error('nsew');
-			if (direction === 'o') return `EDG${randomInteger(1, 16)}`;
-			return `${direction}${randomInteger(1, 4)}`;
+			if (direction === 'o') return `EDG${random.int(16)}`;
+			return `${direction}${random.int(4)}`;
 		case 2:
 			if ('ns'.indexOf(direction[0]) < 0) throw new Error('gomogei-horizontal');
 			if ('we'.indexOf(direction[1]) < 0) throw new Error('gomogei-vertical');
