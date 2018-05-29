@@ -1,23 +1,8 @@
 import React from 'react';
 import './style.scss';
 
-const HorizontalBorder = (props) => (
-    <div className="border-horizontal">
-        {
-            props.data.map((url, i) => {
-                const tileProps = {
-                    key      : i,
-                    className: 'border-tile',
-                    style    : { backgroundImage: `url('${url}')` },
-                }
-                return <div {...tileProps}></div>;
-            })
-        }
-    </div>
-);
-
-const VerticalBorder = (props) => (
-    <div className="border-vertical">
+const Border = (props) => (
+    <div className={props.className}>
         {
             props.data.map((url, i) => {
                 const tileProps = {
@@ -45,13 +30,13 @@ export default class extends React.PureComponent {
 
         return (
             <div className="border" style={mainStyle}>
-                <HorizontalBorder data={top} />
-                <VerticalBorder data={left} />
+                <Border className="border-horizontal" data={top} />
+                <Border className="border-vertical" data={left} />
                 <div className="border-content" style={contentStyle}>
                     {children}
                 </div>
-                <VerticalBorder data={right} />
-                <HorizontalBorder data={bottom} />
+                <Border className="border-vertical" data={right} />
+                <Border className="border-horizontal" data={bottom} />
             </div>
         );
     }
