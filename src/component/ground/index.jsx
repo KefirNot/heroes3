@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import styleFactory from 'helper/styleFactory';
+import styleKit from 'helper/styleKit';
 import './style.scss';
 
 export default class extends React.PureComponent {
@@ -15,10 +15,10 @@ export default class extends React.PureComponent {
             <div className={classnames('ground', className)} style={style}>
                 {
                     data.map(gObj => {
-                        const style = styleFactory.merge(
-                            styleFactory.tileCoords(gObj.coord.x, gObj.coord.y),
-                            styleFactory.backgroundImage(gObj.url),
-                            styleFactory.tileSize(gObj.size.width, gObj.size.height)
+                        const style = styleKit.merge(
+                            styleKit.tileCoords(gObj.coord.x, gObj.coord.y),
+                            styleKit.backgroundImage(gObj.url),
+                            styleKit.tileSize(gObj.size.width, gObj.size.height)
                         );
                         return (
                             <div className="ground-object" style={style}></div>

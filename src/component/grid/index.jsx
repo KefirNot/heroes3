@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import { tileType } from 'store/landscape/tileType';
-import styleFactory from 'helper/styleFactory';
+import styleKit from 'helper/styleKit';
 import array from 'helper/array';
 
 import './style.scss';
@@ -40,7 +40,7 @@ export default class extends React.PureComponent {
         return (
             <div {...props}>
                 {
-                    this.state.data.map(backgroundColor => <div className="grid-cell" style={styleFactory.backgroundColor(backgroundColor)}></div>)
+                    this.state.data.map(backgroundColor => <div className="grid-cell" style={styleKit.backgroundColor(backgroundColor)}></div>)
                 }
             </div>
         );
