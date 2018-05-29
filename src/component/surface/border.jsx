@@ -1,4 +1,5 @@
 import React from 'react';
+import styleFactory from 'helper/styleFactory';
 import './style.scss';
 
 export default (props) => (
@@ -8,7 +9,7 @@ export default (props) => (
                 const tileProps = {
                     key: i,
                     className: 'surface-tile',
-                    style: { backgroundImage: `url('${url}')` },
+                    style: styleFactory.backgroundImage(url),
                 }
                 return <div {...tileProps}></div>;
             })

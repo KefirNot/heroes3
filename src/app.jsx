@@ -4,6 +4,7 @@ import Surface from 'component/surface';
 import Grid from 'component/grid';
 import { connect } from 'react-redux'
 import keyboard from 'helper/keyboard';
+import styleFactory from 'helper/styleFactory';
 import './style.scss';
 
 class App extends React.Component {
@@ -13,10 +14,6 @@ class App extends React.Component {
 
     render() {
         const { map: { landscape: { data, size }, surface: { outland, border } }, ui } = this.props;
-        const mapStyle = {
-            width: (size.width + outland.width * 2 + 2) * 32,
-            height: (size.height + outland.height * 2 + 2) * 32,
-        };
         const contentStyle = {
             top: (outland.height + 1) * 32,
             right: (outland.width + 1) * 32,
@@ -25,7 +22,7 @@ class App extends React.Component {
         };
 
         return (
-            <div className="map" style={mapStyle}>
+            <div className="map" style={styleFactory.tileSize((size.width + outland.width * 2 + 2), (size.height + outland.height * 2 + 2))}>
                 <Landscape {...{ data, style: contentStyle, className: 'map-content' }} />
                 <Grid {...{ data, size, visible: ui.showGrid, style: contentStyle, className: 'map-content' }} />
                 <Surface {...{ size, outland, border, className: 'map-content' }} />

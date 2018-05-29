@@ -17,7 +17,6 @@ const getCell = (data, x, y) => {
 
 export const fillUrlData = (data) => {
 	const size = array2d.getSize(data);
-	const result = [...data.map(row => [...row])];
 	for (let x = 0; x < size.width; x++) {
 		for (let y = 0; y < size.height; y++) {
 			const nearbyCells = generateNearbyCells(data, x, y);

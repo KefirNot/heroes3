@@ -1,23 +1,24 @@
 import urlManager from './urlManager';
+import array from 'helper/array';
 
 const outlandWidth = 4;
 const outlandHeight = 4;
 
 const generateHorizontalOutland = (width) => {
-	return [...Array(outlandHeight)].map(() => [...Array(width + 2 + outlandWidth * 2)].map(() => urlManager('o')));
+	return array.empty(outlandHeight).map(() => array.empty(width + 2 + outlandWidth * 2).map(() => urlManager('o')));
 }
 
 const generateVerticalOutland = (height) => {
-	return [...Array(height + 2)].map(() => [...Array(outlandWidth)].map(() => urlManager('o')));
+	return array.empty(height + 2).map(() => array.empty(outlandWidth).map(() => urlManager('o')));
 }
 
 const generateHorizontalBorder = (width, modifier) => [
 	urlManager(`${modifier}w`),
-	...[...Array(width)].map(() => urlManager(modifier)),
+	...array.empty(width).map(() => urlManager(modifier)),
 	urlManager(`${modifier}e`),
 ];
 
-const generateVerticalBorder = (height, modifier) => [...Array(height)].map(() => urlManager(modifier));
+const generateVerticalBorder = (height, modifier) => array.empty(height).map(() => urlManager(modifier));
 
 export const generate = (size) => ({
 	outland: {

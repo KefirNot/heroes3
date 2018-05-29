@@ -1,6 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
 import { tileType } from 'store/landscape/tileType';
+import styleFactory from 'helper/styleFactory';
+import array from 'helper/array';
+
 import './style.scss';
 
 export default class extends React.PureComponent {
@@ -15,7 +18,7 @@ export default class extends React.PureComponent {
     static getDerivedStateFromProps(props) {
         const { size: { width, height } } = props
         return {
-            data: [...Array(width * height)].map((u, i) => {
+            data: array.empty(width * height).map((u, i) => {
                 const x = i % width;
                 const y = Math.floor(i / width);
                 return props.data[y][x].type === tileType.abyss ? '#f00' : 'transparent';
@@ -37,7 +40,7 @@ export default class extends React.PureComponent {
         return (
             <div {...props}>
                 {
-                    this.state.data.map(backgroundColor => <div className="grid-cell" style={{ backgroundColor }}></div>)
+                    this.state.data.map(backgroundColor => <div className="grid-cell" style={styleFactory.backgroundColor(backgroundColor)}></div>)
                 }
             </div>
         );
