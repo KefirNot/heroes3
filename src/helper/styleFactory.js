@@ -8,6 +8,11 @@ export const tileSize = (width, height) => ({
     height: height * 32,
 })
 
+export const tileCoords = (x, y) => ({
+    top: y * 32,
+    left: x * 32,
+});
+
 export const backgroundImage = (url) => ({
     backgroundImage: `url('${url}')`,
 });
@@ -16,9 +21,19 @@ export const backgroundColor = (color) => ({
     backgroundColor: color,
 });
 
+// export function merge() {
+//     return Object.assign.apply(Object, Array.prototype.slice.call(arguments, 1));
+// }
+
+export function merge(...rest) {
+    return Object.assign({}, ...rest);
+}
+
 export default {
     size,
     tileSize,
+    tileCoords,
     backgroundImage,
     backgroundColor,
+    merge,
 }
