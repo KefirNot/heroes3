@@ -1,39 +1,30 @@
 .surface {
-	&-vertical, &-horizontal {
-		float: left;
-	}
-	
-	&-tile {
+    &-tile {
 		width: 32px;
 		height: 32px;
 		float: left;
-	}
-	&-content {
-		overflow: hidden;
-		float: left;
-	}
-}
+    }
 
-.border {
-	&-horizontal {
-		width: 100%;
-		height: 32px;
-		float: left;
-	}
+    &-outland {
+        float: left;
+    }
 
-	&-vertical {
-		width: 32px;
-		height: calc(100% - 64px);
-		float: left;
-	}
+    &-border {
+        &-horizontal {
+            width: 100%;
+            height: 32px;
+            float: left;
+        }
 
-	&-tile {
-		width: 32px;
-		height: 32px;
-		float: left;
-	}
-	&-content {
-		overflow: hidden;
-		float: left;
-	}
+        &-vertical {
+            width: 32px;
+            height: calc(100% - 64px);
+            float: left;
+        }
+
+        &-content, &-container {
+            overflow: hidden;
+            float: left;
+        }
+    }
 }

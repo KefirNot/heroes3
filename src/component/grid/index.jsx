@@ -12,22 +12,15 @@ export default class extends React.PureComponent {
         };
     }
 
-    getDerivedStateFromProps(props) {
+    static getDerivedStateFromProps(props) {
+        const { size: { width, height } } = props
         return {
             data: [...Array(width * height)].map((u, i) => {
                 const x = i % width;
                 const y = Math.floor(i / width);
-                return this.getColor(data[y][x].type);
+                return props.data[y][x].type === tileType.abyss ? '#f00' : 'transparent';
             }),
         };
-    }
-
-    getColor = tile => {
-        switch (tile) {
-            case tileType.abyss:
-                return '#f00';
-        }
-        return 'transparent';
     }
 
     render() {

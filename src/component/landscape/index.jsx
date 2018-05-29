@@ -12,7 +12,7 @@ export default class extends React.PureComponent {
         return (
             <div {...props}>
                 {
-                    data.map(row => row.map(cell => <div className="tile" style={{ backgroundImage: `url('${cell.url}')` }}></div>))
+                    data.map((row, y) => row.map((cell, x) => <div key={x + y} className="tile" style={{ backgroundImage: `url('${cell.url}')` }}></div>))
                 }
             </div>
         );
