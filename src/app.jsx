@@ -9,6 +9,8 @@ import styleKit from 'helper/styleKit';
 import './style.scss';
 
 class App extends React.Component {
+    static displayName = 'ApplicationRoot';
+
     componentDidMount() {
         keyboard.startListen(this.props.dispatch);
     }

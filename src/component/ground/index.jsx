@@ -4,6 +4,8 @@ import styleKit from 'helper/styleKit';
 import './style.scss';
 
 export default class extends React.PureComponent {
+    static displayName = 'Ground';
+
     render() {
         const { className, style, data } = this.props;
         const props = {

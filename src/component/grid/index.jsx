@@ -7,6 +7,8 @@ import array from 'helper/array';
 import './style.scss';
 
 export default class extends React.PureComponent {
+    static displayName = 'Grid';
+
     constructor(props) {
         super(props);
         const { data, size: { width, height } } = props;

@@ -5,6 +5,8 @@ import styleKit from 'helper/styleKit';
 import './style.scss';
 
 export default class extends React.PureComponent {
+    static displayName = 'Surface';
+
     render() {
         const { size, outland, border } = this.props;
 

@@ -3,6 +3,8 @@ import classnames from 'classnames';
 import './style.scss';
 
 export default class extends React.PureComponent {
+    static displayName = 'Landscape';
+
     render() {
         const { className, data, style } = this.props;
         const props = {
