@@ -21,10 +21,6 @@ export const backgroundColor = (color) => ({
     backgroundColor: color,
 });
 
-// export function merge() {
-//     return Object.assign.apply(Object, Array.prototype.slice.call(arguments, 1));
-// }
-
 export function merge(...rest) {
     return Object.assign({}, ...rest);
 }
