@@ -2,10 +2,53 @@ import React from 'react';
 import Outland from './outland';
 import Border from './border';
 import styleKit from 'helper/styleKit';
+import PropTypes from 'prop-types';
 import './style.scss';
 
 export default class extends React.PureComponent {
     static displayName = 'Surface';
+
+    static propTypes = {
+        outland: PropTypes.shape({
+            top: PropTypes.array.isRequired,
+            right: PropTypes.array.isRequired,
+            bottom: PropTypes.array.isRequired,
+            left: PropTypes.array.isRequired,
+            width: PropTypes.number.isRequired,
+            height: PropTypes.number.isRequired,
+        }).isRequired,
+        border: PropTypes.shape({
+            top: PropTypes.array.isRequired,
+            right: PropTypes.array.isRequired,
+            bottom: PropTypes.array.isRequired,
+            left: PropTypes.array.isRequired,
+        }).isRequired,
+        size: PropTypes.shape({
+            width: PropTypes.number.isRequired,
+            height: PropTypes.number.isRequired,
+        }).isRequired,
+    }
+
+    static defaultProps = {
+        outland: {
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+            width: 0,
+            height: 0,
+        },
+        border: {
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+        },
+        size: {
+            width: 0,
+            height: 0,
+        }
+    }
 
     render() {
         const { size, outland, border } = this.props;

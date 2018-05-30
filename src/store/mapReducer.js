@@ -8,10 +8,10 @@ const defaultLandscape = fillUrlData(convertLandscape(landscapeSmallSource))
 const defaultLandscapeSize = array2d.getSize(defaultLandscape);
 if (!array2d.isValid(defaultLandscape)) throw new Error('lalka');
 const defaultState = {
-	landscape: {
-		data: defaultLandscape,
-		size: defaultLandscapeSize,
-	},
+    landscape: {
+        data: defaultLandscape,
+        size: defaultLandscapeSize,
+    },
     surface: surface.generate(defaultLandscapeSize),
     ground: ground.defaultState,
 };

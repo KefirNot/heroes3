@@ -1,4 +1,6 @@
-const createGroundObject = (x, y, width, height, url) => ({ coord: { x, y }, size: { width, height }, url });
+let id = 1;
+
+const createGroundObject = (x, y, width, height, url) => ({ coord: { x, y }, size: { width, height }, url, id: id++ });
 
 const createChest = (x, y) => createGroundObject(x, y, 2, 1, '/images/ground/chest.gif');
 

@@ -6,10 +6,27 @@ import Ground from 'component/ground';
 import { connect } from 'react-redux'
 import keyboard from 'helper/keyboard';
 import styleKit from 'helper/styleKit';
+import PropTypes from 'prop-types';
 import './style.scss';
 
 class App extends React.Component {
     static displayName = 'ApplicationRoot';
+
+    static propTypes = {
+        ui: PropTypes.shape({
+            showGrid: PropTypes.bool.isRequired
+        }).isRequired,
+        map: PropTypes.shape({
+            landscape: PropTypes.object,
+            ground: PropTypes.object,
+            surface: PropTypes.object,
+        }).isRequired,
+    }
+
+    static defaultProps = {
+        ui: {},
+        map: {},
+    }
 
     componentDidMount() {
         keyboard.startListen(this.props.dispatch);
@@ -29,7 +46,7 @@ class App extends React.Component {
                 <Landscape {...{ data, style: contentStyle, className: 'map-content' }} />
                 <Ground {...{ data: ground.data, style: contentStyle, className: 'map-content' }} />
                 <Grid {...{ data, size, visible: ui.showGrid, style: contentStyle, className: 'map-content' }} />
-                <Surface {...{ size, outland, border, className: 'map-content' }} />
+                <Surface {...{ size, outland, border }} />
             </div>
         );
     }
