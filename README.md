@@ -1,2 +1,5 @@
 # heroes3 online map renderer
-made just for fun
+is in development
+just for fun
+
+*key 'G' - show grid*
