@@ -1,7 +1,2 @@
-configured 
--eslint
--webpack
--babel
--scss
--react
--redux
+# heroes3 online map renderer
+made just for fun
