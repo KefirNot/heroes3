@@ -2,5 +2,5 @@
 is in development
 just for fun
 
-demo: https://kefirnot.github.io/heroes3/
+**demo: https://kefirnot.github.io/heroes3/**
 *key 'G' - show grid*
