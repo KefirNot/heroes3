@@ -14,9 +14,9 @@ const generateTileSrc = (cells) => {
 	return 'unknown';
 };
 
-const addImageSrcPath = (src) => `/images/landscape/${src}.png`;
+const addImageSrcPath = (src) => `images/landscape/${src}.png`;
 
 export default function (nearbyCells) {
-	if (!nearbyCellsIsValid(nearbyCells)) throw new Error('konb! ne to daesh!');
+	if (!nearbyCellsIsValid(nearbyCells)) throw new Error('ne to daesh!');
 	return addImageSrcPath(generateTileSrc(nearbyCells));
 }

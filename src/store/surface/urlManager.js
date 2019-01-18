@@ -16,5 +16,5 @@ const getFileName = (direction) => {
 export default function (direction) {
 	if (!direction) throw new Error('kall');
 	if (direction.length === 0 || direction.length > 2) throw new Error('perdak');
-	return `/images/surface/${getFileName(direction)}.png`;
+	return `images/surface/${getFileName(direction)}.png`;
 }
