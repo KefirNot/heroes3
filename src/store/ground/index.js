@@ -12,9 +12,9 @@ export const defaultState = {
         createChest(1, 2),
         createChest(1, 3),
         createChest(1, 4),
-        createSign(7, 1),
-        createSign(7, 3),
-        createSign(7, 5),
-        createSign(7, 7),
+        createSign(7, 11),
+        createSign(7, 13),
+        createSign(7, 15),
+        createSign(7, 17),
     ],
 }
